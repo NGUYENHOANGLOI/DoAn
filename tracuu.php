@@ -59,9 +59,9 @@ if (!$masv) {
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #fafafa;
-            color: #333;
+            font-family: Arial, sans-serif;
+            background: #f0f2f5;
+            color: #2c3e50;
             line-height: 1.6;
             padding: 20px;
         }
@@ -70,34 +70,42 @@ if (!$masv) {
             max-width: 1200px;
             margin: 0 auto;
             background: white;
-            border: 1px solid #e0e0e0;
+            border: 1px solid #dee2e6;
             border-radius: 8px;
             overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
         .header {
-            background: #f8f9fa;
+            background: #3498db;
             padding: 20px 30px;
-            border-bottom: 1px solid #e0e0e0;
+            color: white;
         }
 
         .back-link {
-            color: #666;
-            text-decoration: none;
-            font-size: 14px;
-            margin-bottom: 15px;
             display: inline-block;
+            margin-bottom: 15px;
+            color: #007bff;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .back-link i {
+            margin-right: 5px;
         }
 
         .back-link:hover {
-            color: #333;
+            text-decoration: underline;
         }
 
         .page-title {
             font-size: 24px;
-            font-weight: 600;
-            color: #333;
+            font-weight: bold;
+            color: white;
             margin: 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
 
         .content {
@@ -106,6 +114,11 @@ if (!$masv) {
 
         .section {
             margin-bottom: 40px;
+            background: white;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            padding: 25px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
         }
 
         .section:last-child {
@@ -114,11 +127,15 @@ if (!$masv) {
 
         .section-title {
             font-size: 18px;
-            font-weight: 600;
-            color: #333;
+            font-weight: bold;
+            color: #2c3e50;
             margin-bottom: 20px;
             padding-bottom: 8px;
-            border-bottom: 2px solid #f0f0f0;
+            border-left: 4px solid #3498db;
+            padding-left: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
 
         .info-grid {
@@ -131,17 +148,22 @@ if (!$masv) {
         .info-item {
             display: flex;
             padding: 12px 0;
+            border-bottom: 1px solid #f8f9fa;
+        }
+
+        .info-item:last-child {
+            border-bottom: none;
         }
 
         .info-label {
-            font-weight: 500;
-            color: #555;
-            min-width: 120px;
+            font-weight: 600;
+            color: #34495e;
+            min-width: 140px;
             margin-right: 15px;
         }
 
         .info-value {
-            color: #333;
+            color: #2c3e50;
             flex: 1;
         }
 
@@ -149,37 +171,38 @@ if (!$masv) {
             width: 100%;
             border-collapse: collapse;
             background: white;
-            border: 1px solid #e0e0e0;
-            border-radius: 4px;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
             overflow: hidden;
         }
 
         th {
-            background: #f8f9fa;
+            background: #3498db;
+            color: white;
             padding: 15px 12px;
             text-align: left;
-            font-weight: 600;
-            color: #333;
-            border-bottom: 1px solid #e0e0e0;
+            font-weight: bold;
+            font-size: 14px;
         }
 
         td {
             padding: 12px;
-            border-bottom: 1px solid #f0f0f0;
+            border-bottom: 1px solid #f8f9fa;
             vertical-align: top;
+            color: #2c3e50;
         }
 
         tr:last-child td {
             border-bottom: none;
         }
 
-        tr:hover {
-            background-color: #f8f9fa;
+        tbody tr:hover {
+            background-color: #e8f4fd;
         }
 
         .empty-message {
             text-align: center;
-            color: #666;
+            color: #7f8c8d;
             font-style: italic;
             padding: 20px;
         }
@@ -187,20 +210,46 @@ if (!$masv) {
         .error-message {
             background: #fff5f5;
             border: 1px solid #fed7d7;
-            color: #c53030;
+            color: #e74c3c;
             padding: 15px;
-            border-radius: 4px;
+            border-radius: 8px;
             margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
 
         .no-data {
             text-align: center;
-            color: #666;
+            color: #7f8c8d;
             padding: 40px;
             background: #f8f9fa;
-            border-radius: 4px;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
         }
 
+        .no-data i {
+            font-size: 48px;
+            color: #bdc3c7;
+        }
+
+        .info-highlight {
+            background: #e8f4fd;
+            border-left: 4px solid #3498db;
+            padding: 15px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 20px;
+        }
+
+        .grade-highlight {
+            font-weight: bold;
+            color: #2980b9;
+        }
+
+        /* Responsive design */
         @media (max-width: 768px) {
             .container {
                 margin: 0 10px;
@@ -211,17 +260,46 @@ if (!$masv) {
                 padding: 20px;
             }
 
+            .section {
+                padding: 20px;
+            }
+
             .info-grid {
                 grid-template-columns: 1fr;
             }
 
-            table {
+            .info-item {
+                flex-direction: column;
+                gap: 5px;
+            }
+
+            .info-label {
+                min-width: auto;
+                margin-right: 0;
+                color: #3498db;
                 font-size: 14px;
+            }
+
+            table {
+                font-size: 12px;
+                overflow-x: auto;
+                display: block;
+                white-space: nowrap;
             }
 
             th,
             td {
-                padding: 8px;
+                padding: 8px 6px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .page-title {
+                font-size: 20px;
+            }
+
+            .section-title {
+                font-size: 16px;
             }
         }
     </style>
@@ -230,28 +308,39 @@ if (!$masv) {
 <body>
     <div class="container">
         <div class="header">
-            <a class="back-link" href="DashboardSV.php"><i class="fas fa-home"></i> Trang chủ</a>
-            <h1 class="page-title">Thông tin sinh viên</h1>
+            <h1 class="page-title">
+                <i class="fas fa-search"></i> Thông tin sinh viên
+            </h1>
         </div>
 
         <div class="content">
+            <a href="DashboardSV.php" class="back-link"><i class="fas fa-home"></i> Trang chủ</a>
             <?php if ($message): ?>
-                <div class="error-message"><?= htmlspecialchars($message) ?></div>
+                <div class="error-message">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <?= htmlspecialchars($message) ?>
+                </div>
             <?php elseif ($sv): ?>
 
                 <!-- Thông tin cá nhân -->
                 <div class="section">
-                    <h2 class="section-title">Thông tin cá nhân</h2>
+                    <h2 class="section-title">
+                        <i class="fas fa-user"></i> Thông tin cá nhân
+                    </h2>
+
+                    <div class="info-highlight">
+                        <div class="info-item">
+                            <span class="info-label">Mã sinh viên:</span>
+                            <span class="info-value"><strong><?= htmlspecialchars($sv['MaSV']) ?></strong></span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Họ và tên:</span>
+                            <span class="info-value"><strong><?= htmlspecialchars($sv['TenSV']) ?></strong></span>
+                        </div>
+                    </div>
+
                     <div class="info-grid">
                         <div>
-                            <div class="info-item">
-                                <span class="info-label">Mã sinh viên:</span>
-                                <span class="info-value"><?= htmlspecialchars($sv['MaSV']) ?></span>
-                            </div>
-                            <div class="info-item">
-                                <span class="info-label">Họ và tên:</span>
-                                <span class="info-value"><?= htmlspecialchars($sv['TenSV']) ?></span>
-                            </div>
                             <div class="info-item">
                                 <span class="info-label">Giới tính:</span>
                                 <span class="info-value"><?= htmlspecialchars($sv['GioiTinh']) ?></span>
@@ -260,12 +349,12 @@ if (!$masv) {
                                 <span class="info-label">Ngày sinh:</span>
                                 <span class="info-value"><?= date("d/m/Y", strtotime($sv['NgaySinh'])) ?></span>
                             </div>
-                        </div>
-                        <div>
                             <div class="info-item">
                                 <span class="info-label">Nơi sinh:</span>
                                 <span class="info-value"><?= htmlspecialchars($sv['NoiSinh']) ?></span>
                             </div>
+                        </div>
+                        <div>
                             <div class="info-item">
                                 <span class="info-label">Email:</span>
                                 <span class="info-value"><?= htmlspecialchars($sv['Email']) ?></span>
@@ -288,16 +377,18 @@ if (!$masv) {
 
                 <!-- Bảng điểm -->
                 <div class="section">
-                    <h2 class="section-title">Bảng điểm học tập</h2>
+                    <h2 class="section-title">
+                        <i class="fas fa-chart-line"></i> Bảng điểm học tập
+                    </h2>
                     <?php if ($result_diem && $result_diem->num_rows > 0): ?>
                         <table>
                             <thead>
                                 <tr>
-                                    <th>Môn học</th>
+                                    <th><i class="fas fa-book"></i> Môn học</th>
                                     <th>Điểm trên lớp</th>
                                     <th>Điểm giữa kỳ</th>
                                     <th>Điểm cuối kỳ</th>
-                                    <th>Điểm tổng kết</th>
+                                    <th><i class="fas fa-trophy"></i> Điểm tổng kết</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -307,31 +398,34 @@ if (!$masv) {
                                         <td><?= htmlspecialchars($row['DiemTrenLop']) ?></td>
                                         <td><?= htmlspecialchars($row['DiemGiuaKy']) ?></td>
                                         <td><?= htmlspecialchars($row['DiemCuoiKy']) ?></td>
-                                        <td><strong><?= htmlspecialchars($row['DiemTongKet']) ?></strong></td>
+                                        <td><span class="grade-highlight"><?= htmlspecialchars($row['DiemTongKet']) ?></span></td>
                                     </tr>
                                 <?php endwhile; ?>
                             </tbody>
                         </table>
                     <?php else: ?>
                         <div class="no-data">
-                            Chưa có dữ liệu bảng điểm
+                            <i class="fas fa-clipboard-list"></i>
+                            <span>Chưa có dữ liệu bảng điểm</span>
                         </div>
                     <?php endif; ?>
                 </div>
 
                 <!-- Thời khóa biểu -->
                 <div class="section">
-                    <h2 class="section-title">Thời khóa biểu lớp</h2>
+                    <h2 class="section-title">
+                        <i class="fas fa-calendar-alt"></i> Thời khóa biểu lớp
+                    </h2>
                     <?php if ($result_tkb && $result_tkb->num_rows > 0): ?>
                         <table>
                             <thead>
                                 <tr>
                                     <th>Thứ</th>
-                                    <th>Ngày học</th>
-                                    <th>Tiết học</th>
-                                    <th>Môn học</th>
-                                    <th>Giảng viên</th>
-                                    <th>Phòng học</th>
+                                    <th><i class="fas fa-calendar"></i> Ngày học</th>
+                                    <th><i class="fas fa-clock"></i> Tiết học</th>
+                                    <th><i class="fas fa-book"></i> Môn học</th>
+                                    <th><i class="fas fa-chalkboard-teacher"></i> Giảng viên</th>
+                                    <th><i class="fas fa-door-open"></i> Phòng học</th>
                                     <th>Ghi chú</th>
                                 </tr>
                             </thead>
@@ -351,7 +445,8 @@ if (!$masv) {
                         </table>
                     <?php else: ?>
                         <div class="no-data">
-                            Chưa có dữ liệu thời khóa biểu
+                            <i class="fas fa-calendar-times"></i>
+                            <span>Chưa có dữ liệu thời khóa biểu</span>
                         </div>
                     <?php endif; ?>
                 </div>
