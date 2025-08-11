@@ -98,3 +98,4 @@ CREATE TABLE ThoiKhoaBieu (
     FOREIGN KEY (MaGV) REFERENCES GiangVien(MaGV),
     FOREIGN KEY (MaPhong) REFERENCES PhongHoc(MaPhong)
 );
+
