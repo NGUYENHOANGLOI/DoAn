@@ -55,7 +55,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     exit();
                 } else {
                     $redirect_page = ($_SESSION['role'] === 'sinhvien') ? 'View_DashboardSV.php' : 'DashboardSV.php';
-                    echo "<script>alert('Đổi mật khẩu thành công!'); window.location='$redirect_page';</script>";
+                    echo "<script>alert('Đổi mật khẩu không thành công!'); window.location='$redirect_page';</script>";
                     exit();
                 }
             } else {
